@@ -106,17 +106,17 @@ header {
     text-transform: uppercase;
     margin: 2% 0; }
   .portada .titular {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+    display: inline-block; }
     .portada .titular i {
       color: #fff;
       font-size: 25px; }
-    .portada .titular hr {
+    .portada .titular:before, .portada .titular:after {
+      content: "";
       width: 70px;
       height: 2px;
       background: #fff;
-      margin: 4px; }
+      margin: 4px;
+      display: inline-block; }
   .portada p {
     margin-top: 30px;
     color: #fff;
@@ -126,7 +126,7 @@ header {
 .portfolio {
   text-align: center;
   box-sizing: border-box;
-  padding: 60px 300px; }
+  padding: 60px 250px; }
   .portfolio h2 {
     font-size: 40px;
     font-family: "montserrat",sans-serif;
@@ -134,26 +134,27 @@ header {
     color: #000;
     text-transform: uppercase; }
   .portfolio .titular {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+    display: inline-block; }
     .portfolio .titular i {
       color: #000;
       font-size: 25px; }
-    .portfolio .titular hr {
+    .portfolio .titular:before, .portfolio .titular:after {
+      content: "";
       width: 70px;
       height: 2px;
       background: #000;
-      margin: 4px; }
+      margin: 4px;
+      display: inline-block; }
   .portfolio .port-img {
     display: flex;
     flex-wrap: wrap;
     list-style: none; }
     .portfolio .port-img li {
-      width: 33%; }
+      box-sizing: border-box;
+      width: 33%;
+      padding: 10px; }
       .portfolio .port-img li img {
-        width: 100%;
-        margin: 5px; }
+        width: 100%; }
 
 .about {
   background: #18BC9C;
@@ -166,17 +167,17 @@ header {
     color: #fff;
     text-transform: uppercase; }
   .about .titular {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+    display: inline-block; }
     .about .titular i {
       color: #fff;
       font-size: 25px; }
-    .about .titular hr {
+    .about .titular:before, .about .titular:after {
+      content: "";
       width: 70px;
       height: 2px;
       background: #fff;
-      margin: 4px; }
+      margin: 4px;
+      display: inline-block; }
   .about .texto {
     width: 550px;
     margin: 0 auto; }
@@ -189,7 +190,7 @@ header {
       text-align: left;
       padding: 15px;
       line-height: 23px; }
-  .about span {
+  .about .descarga {
     display: inline-block;
     width: 150px;
     border-radius: 4%;
@@ -197,11 +198,46 @@ header {
     padding: 5px 0;
     font-size: 20px;
     margin-top: 20px; }
-    .about span i {
+    .about .descarga i {
       margin-right: 15px; }
-    .about span a {
+    .about .descarga a {
       color: #fff;
       font-family: "open Sans", sans-serif;
       text-decoration-line: none; }
+
+.contacto {
+  text-align: center;
+  padding: 60px 0; }
+  .contacto h2 {
+    font-size: 40px;
+    font-family: "montserrat",sans-serif;
+    font-weight: 600;
+    color: #000;
+    text-transform: uppercase; }
+  .contacto .titular {
+    display: inline-block; }
+    .contacto .titular i {
+      color: #000;
+      font-size: 25px; }
+    .contacto .titular:before, .contacto .titular:after {
+      content: "";
+      width: 70px;
+      height: 2px;
+      background: #000;
+      margin: 4px;
+      display: inline-block; }
+  .contacto form input, .contacto form textarea {
+    width: 60%;
+    margin: 5px;
+    font-family: "open Sans", sans-serif;
+    font-size: 20px;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-left: none;
+    border-right: none; }
+  .contacto form button {
+    width: 20%;
+    background: green;
+    color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

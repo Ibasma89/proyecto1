@@ -4,22 +4,21 @@
 
 
 
-@mixin titular ($estrella, $fondo){
-		display: flex;
-		justify-content: center;
-		align-items: center;
+@mixin titular($estrella, $fondo){
+		display: inline-block;
 
 		i{
 			color:$estrella;
 			font-size: 25px;
 		}
 	
-		hr{
-			
+		&:before, &:after{
+			content: "";			
 			width: 70px;
 			height: 2px;
 			background: $fondo;
 			margin:4px;
+			display: inline-block;
 
 		}
 	}
@@ -101,7 +100,7 @@ header {
 	
 
 				.titular{
-					@include titular (#fff, #fff);
+					@include titular(#fff, #fff);
 				}
 
 				p{
@@ -116,7 +115,7 @@ header {
 .portfolio{
 			text-align: center;
 			box-sizing: border-box;
-			padding: 60px 300px;
+			padding: 60px 250px;
 
 			h2{
 				font-size: 40px;
@@ -137,12 +136,14 @@ header {
 				list-style: none;
 
 				li{
+					box-sizing: border-box;
 					width: 33%;
+					padding:10px;
 				
 
 					img{
 						width: 100%;
-						margin:5px;
+						
 					}
 				}
 			}
@@ -161,12 +162,13 @@ header {
 		color: #fff;
 		text-transform: uppercase;
 
-			}
-			.titular{
-					@include titular (#fff, #fff);
-				}
+	}
 
-		.texto{
+	.titular{
+				@include titular(#fff, #fff);
+	}
+
+	.texto{
 			width: 550px;
 			margin: 0 auto;
 
@@ -181,16 +183,16 @@ header {
 					padding: 15px;
 					line-height: 23px;
 				}
-			}
+	}
 
-			span{
-				display: inline-block;
-				width: 150px;
-				border-radius: 4%;
-				border: 1px solid #fff;
-				padding: 5px 0;
-				font-size: 20px;
-				margin-top:20px;
+	.descarga{
+			display: inline-block;
+			width: 150px;
+			border-radius: 4%;
+			border: 1px solid #fff;
+			padding: 5px 0;
+			font-size: 20px;
+			margin-top:20px;
 
 				i{
 					margin-right: 15px;
@@ -202,10 +204,52 @@ header {
 					text-decoration-line: none;
 					
 				}
-			}
+		}
 
 }
 .contacto{
+	text-align: center;
+	padding: 60px 0;
+
+	h2{
+		font-size: 40px;
+		font-family: "montserrat",sans-serif;
+		font-weight: 600;
+		color: #000;
+		text-transform: uppercase;
+
+	}
+
+	.titular{
+				@include titular(#000, #000);
+	}
+
+	form{
+
+
+		input, textarea{
+			width: 60%;
+			margin: 5px;
+			font-family: "open Sans", sans-serif;
+			font-size: 20px;
+			border-top: 1px;
+			border-bottom: 1px;
+			border-left: none;
+			border-right: none;
+
+			}
+		
+
+			button{ 
+			width: 20%;
+			background: green;
+			color: #fff;
+			 }
+
+			 
+
+	}
+
 
 }
 
